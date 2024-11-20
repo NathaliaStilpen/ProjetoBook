@@ -10,11 +10,6 @@
     "password": "123456"
   },
   {
-    "name": "Naty ",
-    "email": "naty@gmail.com",
-    "password": "123"
-  },
-  {
     "name": "Julia",
     "email": "julia@gmail.com",
     "password": "123456"
@@ -33,5 +28,15 @@
     "name": "Vera",
     "email": "vera@gmail.com",
     "password": "123456789"
+  },
+  {
+    "name": "Maria",
+    "email": "maria@gmail.com",
+    "password": "123"
+  },
+  {
+    "name": "Gabi",
+    "email": "gabi@gmail.com",
+    "password": "1234"
   }
 ]

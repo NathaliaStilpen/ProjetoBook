@@ -5,7 +5,7 @@ import Cadastro from "../Pages/Cadastro";
 import Index from "../Pages/Index";
 import Livro from "../Pages/Livro";
 import HomeLog from "../Pages/HomeLog";
-import Home2 from "../Pages/Home";
+import Home2 from "../Pages/Home2";
 
 const Private = ({ Item }) => {
   const user = localStorage.getItem("user"); // Verifique se o usuário está no localStorage ou no estado

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Card({ onCardClick }) {
+export default function CardLog({ onCardClick }) {
   const [livros, setLivros] = useState([]);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function Card({ onCardClick }) {
             <p className="card__name">{livro.titulo}</p>
             <p className="card__genre">{livro.genero}</p>
             <p className="card__price"><strong>Preço:</strong> R$ {livro.preco}</p>
-            <button>Ver Descrição</button>
+            <button>Adicionar a playlist</button>
           </div>
         ))}
       </div>

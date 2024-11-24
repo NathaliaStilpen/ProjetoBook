@@ -1,15 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Card from "../../components/Card";
-import Modal from "../../components/Modal"; // Importando o Modal
+import CardLog from "../../components/CardLog";
+import Modal from "../../components/Modal";
+import perfil from "../../assets/perfil.png";
 
-export default function Index() {
+export default function Home() {
   const [livro, setLivro] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar o modal
-  const [livroSelecionado, setLivroSelecionado] = useState(null); // Livro selecionado
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [livroSelecionado, setLivroSelecionado] = useState(null);
+  const [user, setUser] = useState(null); // Estado para o usuário logado
   const navigate = useNavigate();
+
+  // Obtém o usuário do localStorage ao carregar a página
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("user"));
+    if (userData) {
+      setUser(userData);
+    } else {
+      navigate("/login"); // Redireciona para login se não estiver autenticado
+    }
+  }, [navigate]);
 
   const buscaLivro = async (event) => {
     event.preventDefault();
@@ -40,14 +52,20 @@ export default function Index() {
     setLivro(event.target.value);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("user"); // Remove o usuário do localStorage
+    setUser(null); // Atualiza o estado para deslogado
+    navigate("/login"); // Redireciona para a página de login
+  };
+
   const abrirModal = (livro) => {
-    setLivroSelecionado(livro); // Definir o livro selecionado
-    setIsModalOpen(true); // Abrir o modal
+    setLivroSelecionado(livro);
+    setIsModalOpen(true);
   };
 
   const fecharModal = () => {
-    setIsModalOpen(false); // Fechar o modal
-    setLivroSelecionado(null); // Limpar o livro selecionado
+    setIsModalOpen(false);
+    setLivroSelecionado(null);
   };
 
   return (
@@ -82,13 +100,23 @@ export default function Index() {
               <button type="submit">🔍</button>
             </form>
           </div>
-          <div className="entrar">
-            <Link to="/login">
-              <button type="button">Entrar</button>
-            </Link>
-            <Link to="/cadastro">
-              <button type="button">Cadastre-se</button>
-            </Link>
+          {/* Área do perfil e logout */}
+          <div className="profile-container">
+            {user && (
+              <>
+                <div className="profile-info">
+                  <img
+                    src={perfil}// Ícone de perfil (pode ser substituído por um ícone personalizado)
+                    alt="Ícone do usuário"
+                    className="profile-icon"
+                  />
+                  <span className="profile-name">{user.name}</span>
+                </div>
+                <button className="btn-logout" onClick={handleLogout}>
+                  Logout
+                </button>
+              </>
+            )}
           </div>
         </nav>
       </header>
@@ -108,8 +136,7 @@ export default function Index() {
         </div>
 
         <div className="book-card">
-          <Card onCardClick={abrirModal} />{" "}
-          {/* Passando a função onCardClick */}
+          <CardLog onCardClick={abrirModal} />
         </div>
 
         <Modal

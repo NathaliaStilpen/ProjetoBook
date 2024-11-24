@@ -1,68 +1,74 @@
 .livros_card {
-    text-align: center; /* Centralizar o título */
-    margin: 20px auto; /* Espaçamento superior e inferior */
-    padding: 10px; /* Espaçamento interno */
+  text-align: center; /* Centralizar o título */
+  margin: 20px auto; /* Espaçamento superior e inferior */
+  padding: 10px; /* Espaçamento interno */
 }
 
 .livros_card h1 {
-    font-size: 24px; /* Tamanho do título */
-    margin-bottom: 20px; /* Espaço abaixo do título */
-    color: #333; /* Cor do texto */
+  font-size: 24px; /* Tamanho do título */
+  margin-bottom: 20px; /* Espaço abaixo do título */
+  color: #333; /* Cor do texto */
 }
 
 .card__container {
-    display: flex; /* Dispor os cards lado a lado */
-    flex-wrap: wrap; /* Permitir quebra de linha */
-    gap: 30px; /* Espaçamento entre os cards */
-    justify-content: center; /* Centralizar os cards */
-    width: 70%;
-    margin: 0 auto;
+  display: flex; /* Dispor os cards lado a lado */
+  flex-wrap: wrap; /* Permitir quebra de linha */
+  gap: 30px; /* Espaçamento entre os cards */
+  justify-content: center; /* Centralizar os cards */
+  width: 70%;
+  margin: 0 auto;
 }
 
 .card__item {
-    background-color: #fff; /* Fundo branco */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    overflow: hidden; /* Cortar conteúdo que ultrapassa o card */
-    width: 280px; /* Largura fixa */
-    text-align: left; /* Texto alinhado à esquerda */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+  background-color: #fff; /* Fundo branco */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  overflow: hidden; /* Cortar conteúdo que ultrapassa o card */
+  width: 280px; /* Largura fixa */
+  text-align: left; /* Texto alinhado à esquerda */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+  height: 450px;
+  position: relative;
+  padding: 2px;
 }
 
 .card__item:hover {
-    transform: translateY(-5px); /* Elevação no hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+  transform: translateY(-5px); /* Elevação no hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
 }
 
 .card__item img {
-    width: 100%; /* Imagem responsiva */
-    height: auto; /* Manter proporção da imagem */
-    padding-bottom: 10px;
+  width: 100%; /* Imagem responsiva */
+  height: auto; /* Manter proporção da imagem */
+  padding-bottom: 10px;
+  
 }
-
 
 .card__name {
-    font-size: 18px; /* Tamanho do título do livro */
-    font-weight: bold; /* Negrito no título */
-    margin: 10px; /* Espaçamento ao redor do texto */
-    color: #333; /* Cor do texto */
-}
+    width: 100%;
+    font-size: 16px;
+    white-space: nowrap; /* Não permite quebra de linha */
+    overflow: hidden; /* Oculta o texto que ultrapassar o tamanho */
+    text-overflow: ellipsis; /* Adiciona "..." no final do texto cortado */
+    text-align: center;
+  }
+  
 
 .card__genre {
-    font-size: 14px; /* Tamanho do texto do gênero */
-    color: #666; /* Cor mais suave */
-    margin: 0 10px; /* Margem horizontal */
+  font-size: 14px; /* Tamanho do texto do gênero */
+  color: #666; /* Cor mais suave */
+  margin: 0 10px; /* Margem horizontal */
 }
 
 .card__price {
-    font-size: 16px; /* Tamanho do texto do preço */
-    margin: 10px; /* Espaçamento ao redor */
-    color: #007BFF; /* Azul destaque */
+  font-size: 16px; /* Tamanho do texto do preço */
+  margin: 10px; /* Espaçamento ao redor */
+  color: #007bff; /* Azul destaque */
 }
 
-h2{
-    font-size: 40px;
-    padding: 50px;
+h2 {
+  font-size: 40px;
+  padding: 50px;
 }
 
 .card__item button {
@@ -73,12 +79,13 @@ h2{
     padding: 5px; /* Espaçamento interno */
     cursor: pointer; /* Cursor de mãozinha */
     font-size: 14px; /* Tamanho do texto */
-    margin: 10px; /* Margem do botão */
+    width: 60%; /* largura fixa para uniformizar */
     transition: background-color 0.3s; /* Transição suave */
+    height: 35px; /* altura fixa */
+    position: absolute; /* permite posicionar o botão de forma absoluta */
+    bottom: 16px; /* distância da base do card */
 }
 
 .card__item button:hover {
-    background-color: #218838; /* Tom de verde mais escuro no hover */
+  background-color: #218838; /* Tom de verde mais escuro no hover */
 }
-
-

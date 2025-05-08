@@ -16,10 +16,7 @@ Aplicação de pesquisa de livros utilizando a API do Google Books, onde é poss
 
 ```bash
 # Clonar o projeto
-git clone https://github.com/SEU_USUARIO/NOME_DO_PROJETO.git
-
-# Entrar na pasta
-cd NOME_DO_PROJETO
+git clone (https://github.com/NathaliaStilpen/ProjetoBook.git)
 
 # Instalar dependências (ajuste conforme sua stack)
 npm install
